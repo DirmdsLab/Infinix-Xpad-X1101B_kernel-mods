@@ -1,0 +1,14 @@
+{
+  "defrag_gc_ko": {
+    "CRC_MISMATCH": 15,
+    "MISSING": 5
+  },
+  "dev_gc": {
+    "CRC_MISMATCH": 21,
+    "MISSING": 9
+  },
+  "read_ahead": {
+    "CRC_MISMATCH": 2,
+    "MISSING": 2
+  }
+}

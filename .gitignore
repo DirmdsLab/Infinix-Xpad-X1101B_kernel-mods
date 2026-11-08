@@ -1,0 +1,15 @@
+# Keep empty input/output directories while excluding their local contents.
+/device/*
+!/device/.gitkeep
+/src/*
+!/src/.gitkeep
+/build/*
+!/build/.gitkeep
+/build.bak/
+/log/*
+!/log/.gitkeep
+/tools/*
+!/tools/.gitkeep
+__pycache__/
+*.py[cod]
+*.zip
