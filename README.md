@@ -267,6 +267,70 @@ Macvlan, IPv6 NAT, CPU/process limits, and user-namespace sandboxing were not en
 
 The old successful boot SHA-256 was `c7115492b3fba5c7592ce59d81a4d3335ed9316ff3658203b42689ef6ad688e6`. The new folder/output paths can affect binary reproducibility, so that is historical evidence, not a required checksum for this reorganized workflow. The source patches and baseline options remain the same.
 
+### Droidspaces v7.1.0 - Checking system requirements...
+
+```sh
+Droidspaces v7.1.0 - Checking system requirements...
+
+[MUST HAVE]
+These features are required for Droidspaces to work:
+
+  [✓] Root privileges
+  [✓] Linux version
+  [✓] PID namespace
+  [✓] Mount namespace
+  [✓] UTS namespace
+  [✓] IPC namespace
+  [✓] pivot_root syscall
+  [✓] /proc filesystem
+  [✓] /sys filesystem
+  [✓] Seccomp support
+
+[RECOMMENDED]
+These features improve functionality but are not strictly required:
+
+  [✓] epoll support
+  [✓] signalfd support
+  [✓] PTY support
+  [✓] devpts support
+  [✓] Loop device
+  [✓] ext4 filesystem
+  [✓] Cgroup v2 support
+  [✓] Cgroup namespace
+  [✓] devtmpfs support
+
+[OPTIONAL]
+These features are optional and only used for specific functionality:
+
+  [✓] FUSE support
+  [✓] TUN/TAP support
+  [✓] OverlayFS support
+  [✓] Network namespace
+  [✓] Bridge device support
+  [✓] Veth pair support
+  [✗] Macvlan support
+      CONFIG_MACVLAN; required for --net=macvlan
+  [✗] IPv6 NAT support
+      CONFIG_IP6_NF_NAT and CONFIG_IP6_NF_TARGET_MASQUERADE; --net=nat containers are IPv4 only if absent
+  [✓] Memory limit support
+  [✓] Swap limit support
+  [✗] CPU limit support
+      CONFIG_CFS_BANDWIDTH, and no cgroup_disable=cpu on the kernel command line; --cpus is skipped if absent
+  [✓] CPU usage accounting
+  [✗] Process limit support
+      CONFIG_CGROUP_PIDS, and no cgroup_disable=pids on the kernel command line; --pids-limit is skipped if absent
+  [✗] Sandboxing (user namespaces)
+      CONFIG_USER_NS; enable per container with --allow-sandboxing. Needed by unprivileged Docker and Podman, by sandboxed apps (Flatpak, Bubblewrap, browsers) and by desktop environments
+
+Summary:
+
+  [✓] All required features found!
+
+Command executed (exit code: 0)
+
+Requirements check completed successfully
+```
+
 ## Sources and tests
 
 - [Pinned AOSP source](https://android.googlesource.com/kernel/common/+/7c6bbcca33e1734642601acf07a14140116fa956)
